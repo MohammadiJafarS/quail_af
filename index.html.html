@@ -1,0 +1,2201 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<link href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtyjKBR-OS7bjPHSwJt1ReYe6tGZKE7e15hProeELfdoFEXl3lPdaTmTaS&s=10" rel="shortcut icon" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>مرغداری افرازه | فروشگاه تخصصی طیور</title>
+
+<style>
+
+/* =====================================================
+   تنظیمات اصلی
+===================================================== */
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+:root{
+    --green:#4f7f32;
+    --green2:#79a94d;
+    --gold:#d6a63a;
+
+    --bg:#f3f5ef;
+    --card:#ffffff;
+
+    --text:#263026;
+    --muted:#788078;
+
+    --dark:#172019;
+    --border:#e2e7df;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Tahoma,Arial,sans-serif;
+
+    /*
+    =================================================
+    پس زمینه سایت
+    =================================================
+
+    فقط اسم عکس را تغییر بده.
+
+    مثال:
+    background.jpg
+    farm.jpg
+    chicken.jpg
+    my-background.png
+
+    عکس را کنار همین فایل HTML قرار بده.
+    */
+
+    background:
+        linear-gradient(
+            rgba(243,245,239,0.88),
+            rgba(243,245,239,0.88)
+        ),
+        url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTro2bAv6K-0KkU78LYRGdckBTWjRy7BIJRASB70lOXvy7SlGSUZ68IyjPP&s=10")
+        center/cover
+        fixed
+        no-repeat;
+
+    color:var(--text);
+
+    transition:.3s;
+}
+
+/* حالت شب */
+
+body.dark{
+
+    --bg:#101511;
+    --card:#1c241e;
+    --text:#edf3ed;
+    --muted:#aeb8ae;
+    --dark:#090d0a;
+    --border:#303b32;
+
+    background:
+        linear-gradient(
+            rgba(10,15,11,0.88),
+            rgba(10,15,11,0.88)
+        ),
+        url("background.jpg")
+        center/cover
+        fixed
+        no-repeat;
+}
+
+
+/* =====================================================
+   کانتینر
+===================================================== */
+
+.container{
+    width:1180px;
+    max-width:94%;
+    margin:auto;
+}
+
+
+/* =====================================================
+   نوار بالایی
+===================================================== */
+
+.topbar{
+    background:#111812;
+    color:#d7dfd7;
+    padding:9px 0;
+    font-size:12px;
+}
+
+.topbar .container{
+    display:flex;
+    justify-content:space-between;
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+header{
+
+    position:sticky;
+    top:0;
+
+    z-index:1000;
+
+    background:rgba(255,255,255,.94);
+
+    backdrop-filter:blur(14px);
+
+    border-bottom:1px solid var(--border);
+
+    box-shadow:
+        0 5px 25px rgba(0,0,0,.07);
+}
+
+body.dark header{
+    background:rgba(28,36,30,.94);
+}
+
+
+.header-main{
+
+    min-height:105px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:22px;
+}
+
+
+/* =====================================================
+   لوگو
+===================================================== */
+
+.logo-area{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:13px;
+
+    min-width:280px;
+}
+
+.logo-img{
+
+    width:72px;
+    height:72px;
+
+    border-radius:18px;
+
+    object-fit:cover;
+
+    background:#e8eee5;
+
+    border:3px solid var(--green);
+
+    box-shadow:
+        0 7px 20px
+        rgba(79,127,50,.25);
+}
+
+.logo{
+
+    font-size:24px;
+
+    font-weight:bold;
+
+    color:var(--green);
+}
+
+.logo span{
+
+    display:block;
+
+    color:var(--muted);
+
+    font-size:11px;
+
+    margin-top:7px;
+}
+
+
+/* =====================================================
+   جستجو
+===================================================== */
+
+.search{
+
+    flex:1;
+
+    max-width:500px;
+
+    height:46px;
+
+    display:flex;
+
+    border:1px solid var(--border);
+
+    border-radius:12px;
+
+    overflow:hidden;
+
+    background:var(--card);
+
+    box-shadow:
+        0 4px 15px rgba(0,0,0,.05);
+}
+
+.search input{
+
+    flex:1;
+
+    border:0;
+
+    outline:0;
+
+    padding:0 16px;
+
+    background:transparent;
+
+    color:var(--text);
+
+    font-family:Tahoma;
+}
+
+.search button{
+
+    width:85px;
+
+    border:0;
+
+    background:var(--green);
+
+    color:#fff;
+
+    cursor:pointer;
+
+    font-family:Tahoma;
+
+    transition:.2s;
+}
+
+.search button:hover{
+
+    background:var(--green2);
+}
+
+
+/* =====================================================
+   دکمه های Header
+===================================================== */
+
+.header-actions{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:9px;
+}
+
+.theme-btn,
+.cart{
+
+    height:44px;
+
+    border-radius:11px;
+
+    border:1px solid var(--border);
+
+    background:var(--card);
+
+    color:var(--text);
+}
+
+.theme-btn{
+
+    padding:0 13px;
+
+    cursor:pointer;
+
+    font-family:Tahoma;
+}
+
+.cart{
+
+    display:flex;
+
+    align-items:center;
+
+    padding:0 14px;
+
+    gap:7px;
+}
+
+.cart span{
+
+    background:var(--green);
+
+    color:white;
+
+    min-width:22px;
+
+    height:22px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:50%;
+
+    font-size:11px;
+}
+
+
+/* =====================================================
+   منوی سایت
+===================================================== */
+
+nav{
+
+    background:var(--dark);
+}
+
+nav ul{
+
+    list-style:none;
+
+    display:flex;
+}
+
+nav a{
+
+    color:#e9eee9;
+
+    display:block;
+
+    padding:15px 23px;
+
+    font-size:13px;
+
+    border-left:
+        1px solid rgba(255,255,255,.06);
+
+    transition:.2s;
+}
+
+nav a:hover{
+
+    background:var(--green);
+}
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.hero{
+
+    margin-top:24px;
+
+    min-height:390px;
+
+    border-radius:22px;
+
+    overflow:hidden;
+
+    position:relative;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            rgba(12,25,15,.92),
+            rgba(22,42,25,.65),
+            rgba(22,42,25,.18)
+        ),
+
+        url("https://images.unsplash.com/photo-1548550023-2bdb3c5beed7?auto=format&fit=crop&w=1400&q=80")
+
+        center/cover;
+
+    box-shadow:
+        0 15px 40px rgba(0,0,0,.15);
+}
+
+.hero-content{
+
+    padding:75px 65px;
+
+    color:white;
+
+    max-width:700px;
+}
+
+.badge{
+
+    display:inline-block;
+
+    padding:7px 13px;
+
+    background:
+        rgba(255,255,255,.15);
+
+    border:
+        1px solid rgba(255,255,255,.3);
+
+    border-radius:30px;
+
+    font-size:12px;
+
+    margin-bottom:18px;
+}
+
+.hero h1{
+
+    font-size:42px;
+
+    line-height:1.5;
+
+    margin-bottom:10px;
+}
+
+.hero p{
+
+    color:#e4ebe4;
+
+    line-height:2;
+
+    font-size:14px;
+}
+
+.hero-buttons{
+
+    display:flex;
+
+    gap:10px;
+
+    margin-top:25px;
+}
+
+.hero-btn{
+
+    padding:13px 25px;
+
+    border-radius:10px;
+
+    border:0;
+
+    cursor:pointer;
+
+    font-family:Tahoma;
+
+    font-size:13px;
+
+    background:var(--green2);
+
+    color:white;
+}
+
+.hero-btn.secondary{
+
+    background:
+        rgba(255,255,255,.12);
+
+    border:
+        1px solid rgba(255,255,255,.4);
+}
+
+
+/* =====================================================
+   عنوان بخش
+===================================================== */
+
+.section-head{
+
+    margin:40px 0 18px;
+
+    display:flex;
+
+    align-items:end;
+
+    justify-content:space-between;
+}
+
+.section-head h2{
+
+    font-size:22px;
+}
+
+.section-head p{
+
+    color:var(--muted);
+
+    font-size:12px;
+
+    margin-top:7px;
+}
+
+
+/* =====================================================
+   دسته بندی
+===================================================== */
+
+.categories{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(4,1fr);
+
+    gap:15px;
+}
+
+.category{
+
+    background:var(--card);
+
+    border:
+        1px solid var(--border);
+
+    border-radius:16px;
+
+    padding:25px 15px;
+
+    text-align:center;
+
+    transition:.25s;
+
+    cursor:pointer;
+}
+
+.category:hover{
+
+    transform:
+        translateY(-5px);
+
+    box-shadow:
+        0 12px 25px
+        rgba(0,0,0,.08);
+}
+
+.category-icon{
+
+    width:65px;
+
+    height:65px;
+
+    margin:auto;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    background:#edf4e9;
+
+    border-radius:18px;
+
+    font-size:32px;
+}
+
+.category h3{
+
+    margin:14px 0 6px;
+
+    font-size:15px;
+}
+
+.category p{
+
+    color:var(--muted);
+
+    font-size:11px;
+}
+
+
+/* =====================================================
+   فروشگاه
+===================================================== */
+
+.products{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(4,1fr);
+
+    gap:18px;
+}
+
+.product{
+
+    background:var(--card);
+
+    border:
+        1px solid var(--border);
+
+    border-radius:17px;
+
+    overflow:hidden;
+
+    position:relative;
+
+    transition:.25s;
+}
+
+.product:hover{
+
+    transform:
+        translateY(-6px);
+
+    box-shadow:
+        0 15px 30px
+        rgba(0,0,0,.1);
+}
+
+.product-image{
+
+    height:205px;
+
+    position:relative;
+
+    background:#e8ece7;
+
+    overflow:hidden;
+}
+
+.product-image img{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+    transition:.4s;
+}
+
+.product:hover
+.product-image img{
+
+    transform:scale(1.06);
+}
+
+.product-tag{
+
+    position:absolute;
+
+    top:12px;
+
+    right:12px;
+
+    background:var(--green);
+
+    color:white;
+
+    padding:6px 10px;
+
+    border-radius:20px;
+
+    font-size:10px;
+
+    z-index:2;
+}
+
+.product-info{
+
+    padding:16px;
+}
+
+.product h3{
+
+    font-size:15px;
+
+    margin-bottom:8px;
+}
+
+.product p{
+
+    color:var(--muted);
+
+    font-size:11px;
+
+    line-height:1.8;
+
+    min-height:40px;
+}
+
+.product-bottom{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    margin-top:15px;
+}
+
+.price{
+
+    color:var(--green);
+
+    font-size:16px;
+
+    font-weight:bold;
+}
+
+.buy{
+
+    background:var(--green);
+
+    color:white;
+
+    padding:9px 13px;
+
+    border-radius:9px;
+
+    font-size:11px;
+
+    cursor:pointer;
+}
+
+.buy:hover{
+
+    background:var(--green2);
+}
+
+
+/* =====================================================
+   ویژگی ها
+===================================================== */
+
+.info-box{
+
+    margin-top:45px;
+
+    background:var(--dark);
+
+    color:white;
+
+    border-radius:20px;
+
+    padding:30px;
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:20px;
+}
+
+.info-item{
+
+    display:flex;
+
+    gap:14px;
+
+    align-items:center;
+}
+
+.info-icon{
+
+    font-size:30px;
+}
+
+.info-item h3{
+
+    font-size:14px;
+
+    margin-bottom:5px;
+}
+
+.info-item p{
+
+    color:#aeb8ae;
+
+    font-size:11px;
+}
+
+
+/* =====================================================
+   درباره ما
+===================================================== */
+
+.about{
+
+    margin-top:35px;
+
+    padding:30px;
+
+    background:var(--card);
+
+    border:
+        1px solid var(--border);
+
+    border-radius:18px;
+
+    line-height:2;
+}
+
+.about h2{
+
+    margin-bottom:12px;
+}
+
+.about p{
+
+    color:var(--muted);
+
+    font-size:13px;
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+footer{
+
+    margin-top:55px;
+
+    padding:45px 0 20px;
+
+    background:#111812;
+
+    color:#cdd5cd;
+}
+
+.footer-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        2fr 1fr 1fr 1fr;
+
+    gap:35px;
+}
+
+footer h3{
+
+    color:white;
+
+    margin-bottom:15px;
+
+    font-size:15px;
+}
+
+footer p,
+footer a{
+
+    color:#9fa99f;
+
+    font-size:11px;
+
+    line-height:2;
+}
+
+footer a{
+
+    display:block;
+}
+
+footer a:hover{
+
+    color:white;
+}
+
+.copyright{
+
+    border-top:
+        1px solid #303830;
+
+    margin-top:30px;
+
+    padding-top:18px;
+
+    text-align:center;
+
+    color:#7e887e;
+
+    font-size:10px;
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media(max-width:900px){
+
+    .header-main{
+
+        flex-wrap:wrap;
+
+        padding:16px 0;
+    }
+
+    .logo-area{
+
+        min-width:auto;
+    }
+
+    .search{
+
+        order:3;
+
+        max-width:none;
+
+        width:100%;
+    }
+
+    .categories{
+
+        grid-template-columns:
+            repeat(2,1fr);
+    }
+
+    .products{
+
+        grid-template-columns:
+            repeat(2,1fr);
+    }
+
+    .info-box{
+
+        grid-template-columns:1fr;
+    }
+
+    .footer-grid{
+
+        grid-template-columns:
+            1fr 1fr;
+    }
+}
+
+
+@media(max-width:600px){
+
+    .topbar .container{
+
+        flex-direction:column;
+
+        gap:5px;
+    }
+
+    .hero{
+
+        min-height:360px;
+    }
+
+    .hero-content{
+
+        padding:50px 25px;
+    }
+
+    .hero h1{
+
+        font-size:30px;
+    }
+
+    .categories,
+    .products{
+
+        grid-template-columns:1fr;
+    }
+
+    .footer-grid{
+
+        grid-template-columns:1fr;
+    }
+
+    nav ul{
+
+        overflow-x:auto;
+    }
+
+    nav a{
+
+        white-space:nowrap;
+
+        padding:13px 15px;
+    }
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     TOP BAR
+===================================================== -->
+
+<div class="topbar">
+
+    <div class="container">
+
+        <span>
+            🐔 فروشگاه تخصصی مرغداری افرازه
+        </span>
+
+        <span>
+            📞 0912-612-3026
+        </span>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<header>
+
+<div class="container header-main">
+
+
+    <!-- لوگو -->
+
+    <div class="logo-area">
+
+        <!--
+        عکس لوگوی خودت را با نام logo.png
+        کنار این فایل قرار بده
+        -->
+
+        <img
+            src="https://www.tasvirezendegi.com/wp-content/uploads/2014/11/9frjvlmrgn7zvehr20c.jpg"
+            class="logo-img"
+            alt="لوگوی مرغداری افرازه"
+        >
+
+        <div class="logo">
+
+            مرغداری افرازه
+
+            <span>
+                تازه • سالم • مطمئن
+            </span>
+
+        </div>
+
+    </div>
+
+
+    <!-- جستجو -->
+
+    <div class="search">
+
+        <input
+            id="searchInput"
+            type="text"
+            placeholder="جستجوی مرغ، بلدرچین، تخم و محصولات..."
+            onkeyup="searchProducts()"
+        >
+
+        <button
+            onclick="searchProducts()">
+            جستجو
+        </button>
+
+    </div>
+
+
+    <!-- دکمه ها -->
+
+    <div class="header-actions">
+
+        <button
+            class="theme-btn"
+            onclick="toggleTheme()"
+            id="themeButton">
+
+            🌙
+
+        </button>
+
+
+        <div class="cart">
+
+            🛒 سبد خرید
+
+            <span id="cartCount">
+                0
+            </span>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     NAV
+===================================================== -->
+
+<nav>
+
+<div class="container">
+
+<ul>
+
+    <li>
+        <a href="#">
+            خانه
+        </a>
+    </li>
+
+    <li>
+        <a href="#birds">
+            دسته‌بندی
+        </a>
+    </li>
+
+    <li>
+        <a href="#products">
+            فروشگاه
+        </a>
+    </li>
+
+    <li>
+        <a href="#eggs">
+            تخم پرندگان
+        </a>
+    </li>
+
+    <li>
+        <a href="#about">
+            درباره ما
+        </a>
+    </li>
+
+    <li>
+        <a href="#contact">
+            تماس با ما
+        </a>
+    </li>
+
+</ul>
+
+</div>
+
+</nav>
+
+</header>
+
+
+
+<!-- =====================================================
+     MAIN
+===================================================== -->
+
+<main class="container">
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section class="hero">
+
+<div class="hero-content">
+
+    <span class="badge">
+
+        فروشگاه آنلاین مرغداری افرازه
+
+    </span>
+
+
+    <h1>
+
+        مرغ، بلدرچین و
+        تخم پرندگان
+
+    </h1>
+
+
+    <p>
+
+        انتخابی مطمئن برای پرورش‌دهندگان
+        و علاقه‌مندان به پرندگان؛
+        با مجموعه‌ای از محصولات تازه
+        و باکیفیت.
+
+    </p>
+
+
+    <div class="hero-buttons">
+
+        <button
+            class="hero-btn"
+            onclick="goToProducts()">
+
+            مشاهده فروشگاه
+
+        </button>
+
+
+        <button
+            class="hero-btn secondary"
+            onclick="
+            document
+            .getElementById('birds')
+            .scrollIntoView({behavior:'smooth'})
+            ">
+
+            دسته‌بندی‌ها
+
+        </button>
+
+    </div>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     CATEGORIES
+===================================================== -->
+
+<div
+    class="section-head"
+    id="birds">
+
+    <div>
+
+        <h2>
+            دسته‌بندی فروشگاه
+        </h2>
+
+        <p>
+            محصول موردنظر خود را سریع پیدا کنید
+        </p>
+
+    </div>
+
+</div>
+
+
+<div class="categories">
+
+
+    <div class="category">
+
+        <div class="category-icon">
+            🐔
+        </div>
+
+        <h3>
+            مرغ و جوجه
+        </h3>
+
+        <p>
+            مرغ محلی و انواع جوجه
+        </p>
+
+    </div>
+
+
+    <div class="category">
+
+        <div class="category-icon">
+            🐦
+        </div>
+
+        <h3>
+            بلدرچین
+        </h3>
+
+        <p>
+            بلدرچین و جوجه بلدرچین
+        </p>
+
+    </div>
+
+
+    <div class="category">
+
+        <div class="category-icon">
+            🥚
+        </div>
+
+        <h3>
+            تخم پرندگان
+        </h3>
+
+        <p>
+            تخم مرغ و تخم بلدرچین
+        </p>
+
+    </div>
+
+
+    <div class="category">
+
+        <div class="category-icon">
+            🦆
+        </div>
+
+        <h3>
+            اردک
+        </h3>
+
+        <p>
+            اردک و جوجه اردک
+        </p>
+
+    </div>
+
+
+</div>
+
+
+
+<!-- =====================================================
+     STORE
+===================================================== -->
+
+<div
+    class="section-head"
+    id="products">
+
+    <div>
+
+        <h2>
+            محصولات فروشگاه
+        </h2>
+
+        <p>
+            محصولات منتخب مرغداری افرازه
+        </p>
+
+    </div>
+
+</div>
+
+
+<div class="products">
+
+
+<!-- PRODUCT 1 -->
+
+<div class="product">
+
+    <div class="product-image">
+
+        <span class="product-tag">
+            پرفروش
+        </span>
+
+        <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9xo9gBeF2rwqXYgBkfIoAtYi72OJd6u6elouWxh1iTA&s"
+            alt="مرغ محلی"
+        >
+
+    </div>
+
+
+    <div class="product-info">
+
+        <h3>
+            جوجه مرغ محلی
+        </h3>
+
+        <p>
+            مرغ محلی سالم و مناسب برای پرورش.
+        </p>
+
+
+        <div class="product-bottom">
+
+            <div class="price">
+                500,000 تومان
+            </div>
+
+
+            <a
+                href="#"
+                class="buy"
+                onclick="addToCart(event)">
+
+                افزودن 🛒
+
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<!-- PRODUCT 2 -->
+
+<div class="product">
+
+    <div class="product-image">
+
+        <span class="product-tag">
+            ویژه
+        </span>
+
+        <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4NXgRoDYNxZNPXmuNKJCY794vzdyJOdnu2KCNI1qQzA&s=10"
+            alt="بلدرچین"
+        >
+
+    </div>
+
+
+    <div class="product-info">
+
+        <h3>
+            بلدرچین
+        </h3>
+
+        <p>
+            بلدرچین مناسب پرورش و نگهداری.
+        </p>
+
+
+        <div class="product-bottom">
+
+            <div class="price">
+                300,000 تومان
+            </div>
+
+            <a
+                href="#"
+                class="buy"
+                onclick="addToCart(event)">
+
+                افزودن 🛒
+
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<!-- PRODUCT 3 -->
+
+<div
+    class="product"
+    id="eggs">
+
+    <div class="product-image">
+
+        <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYlNx-jHbx5_4yl8XHQgPW0R7SACiE54kV0Ii-LDQj-VfMF-nJE40k2MfO&s=10"
+            alt="تخم مرغ"
+        >
+
+    </div>
+
+
+    <div class="product-info">
+
+        <h3>
+            تخم مرغ محلی
+        </h3>
+
+        <p>
+            تخم مرغ تازه محلی.
+        </p>
+
+
+        <div class="product-bottom">
+
+            <div class="price">
+                200,000 تومان
+            </div>
+
+            <a
+                href="#"
+                class="buy"
+                onclick="addToCart(event)">
+
+                افزودن 🛒
+
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<!-- PRODUCT 4 -->
+
+<div class="product">
+
+    <div class="product-image">
+
+        <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTagkS9I0qyFfWXTFot0ZSbRy01zv8-hMkAIxekHvtMajq1TPZ6nuRijHU&s=10"
+            alt="تخم بلدرچین"
+        >
+
+    </div>
+
+
+    <div class="product-info">
+
+        <h3>
+            تخم بلدرچین
+        </h3>
+
+        <p>
+            تخم بلدرچین تازه و باکیفیت.
+        </p>
+
+
+        <div class="product-bottom">
+
+            <div class="price">
+                60,000 تومان
+            </div>
+
+            <a
+                href="#"
+                class="buy"
+                onclick="addToCart(event)">
+
+                افزودن 🛒
+
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<!-- PRODUCT 5 -->
+
+<div class="product">
+
+    <div class="product-image">
+
+        <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTAmBidNHYf27HCCcOlSY6QaAcYpZsxBbdv2VPwc7Y-AAnnd36Q4W1mrJke&s=10"
+            alt="اردک"
+        >
+
+    </div>
+
+
+    <div class="product-info">
+
+        <h3>
+            اردک چل چل
+        </h3>
+
+        <p>
+            اردک تازه و باکیفیت.
+        </p>
+
+
+        <div class="product-bottom">
+
+            <div class="price">
+                60,000 تومان
+            </div>
+
+            <a
+                href="#"
+                class="buy"
+                onclick="addToCart(event)">
+
+                افزودن 🛒
+
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<!-- PRODUCT 6 -->
+
+<div class="product">
+
+    <div class="product-image">
+
+        <img
+            src="https://sepidtiur.com/files/image/beheshti/1658992600_Laying%20duck%20(5).JPG"
+            alt="تخم اردک"
+        >
+
+    </div>
+
+
+    <div class="product-info">
+
+        <h3>
+            تخم اردک
+        </h3>
+
+        <p>
+            تخم اردک تازه و باکیفیت.
+        </p>
+
+
+        <div class="product-bottom">
+
+            <div class="price">
+                100,000 تومان
+            </div>
+
+            <a
+                href="#"
+                class="buy"
+                onclick="addToCart(event)">
+
+                افزودن 🛒
+
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<!-- PRODUCT 7 -->
+
+<div class="product">
+
+    <div class="product-image">
+
+        <img
+            src="https://www.hovabator.ir/wp-content/uploads/2018/06/%D9%86%DA%98%D8%A7%D8%AF-%D9%BE%DA%A9%DB%8C%D9%86.jpg"
+            alt="اردک"
+        >
+
+    </div>
+
+
+    <div class="product-info">
+
+        <h3>
+            اردک
+        </h3>
+
+        <p>
+            اردک مناسب پرورش.
+        </p>
+
+
+        <div class="product-bottom">
+
+            <div class="price">
+                100,000 تومان
+            </div>
+
+            <a
+                href="#"
+                class="buy"
+                onclick="addToCart(event)">
+
+                افزودن 🛒
+
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<!-- PRODUCT 8 -->
+
+<div class="product">
+
+    <div class="product-image">
+
+        <img
+            src="https://parsstock.ir/LargePhotos/10083/1163120-%D8%AC%D9%88%D8%AC%D9%87-%D8%A7%D8%B1%D8%AF%DA%A9-%D8%A8%D8%A7%D9%85%D8%B2%D9%87-%D8%AF%D9%88-%D8%B1%D9%88%D8%B2%D9%87-%D8%AC%D8%AF%D8%A7-%D8%B4%D8%AF%D9%87-%D8%B1%D9%88%DB%8C-%D8%B3%D9%81%DB%8C%D8%AF.jpg"
+            alt="جوجه اردک"
+        >
+
+    </div>
+
+
+    <div class="product-info">
+
+        <h3>
+            جوجه اردک
+        </h3>
+
+        <p>
+            جوجه اردک تازه و باکیفیت.
+        </p>
+
+
+        <div class="product-bottom">
+
+            <div class="price">
+                100,000 تومان
+            </div>
+
+            <a
+                href="#"
+                class="buy"
+                onclick="addToCart(event)">
+
+                افزودن 🛒
+
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+</div>
+<div
+    class="section-head"
+    id="products">
+
+    <div>
+
+        <h2>
+          محصولات خوراکی
+        </h2>
+
+        <p>
+            محصولات منتخب مرغداری افرازه
+        </p>
+
+    </div>
+
+</div>
+
+
+<div class="products">
+
+<!-- PRODUCT 8 -->
+
+<div class="product">
+
+    <div class="product-image">
+
+        <img
+            src="https://khormae.ir/wp-content/uploads/2024/03/%D8%B4%DB%8C%D8%B1%D9%87-%D8%AE%D8%B1%D9%85%D8%A7.jpg.webp"
+            alt="شیره خرما"
+        >
+
+    </div>
+
+
+    <div class="product-info">
+
+        <h3>
+           شیره خرما
+        </h3>
+
+        <p>
+           ارگانیک و اصل و 100 درصد طبیعی
+        </p>
+
+
+        <div class="product-bottom">
+
+            <div class="price">
+                100,000 تومان
+            </div>
+
+            <a
+                href="#"
+                class="buy"
+                onclick="addToCart(event)">
+
+                افزودن 🛒
+
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+</div>
+
+<!-- =====================================================
+     ویژگی ها
+===================================================== -->
+
+<div class="info-box">
+
+
+    <div class="info-item">
+
+        <div class="info-icon">
+            🚚
+        </div>
+
+        <div>
+
+            <h3>
+                ارسال مطمئن
+            </h3>
+
+            <p>
+                بسته‌بندی مناسب محصولات
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="info-item">
+
+        <div class="info-icon">
+            🌱
+        </div>
+
+        <div>
+
+            <h3>
+                محصول تازه
+            </h3>
+
+            <p>
+                توجه به کیفیت و تازگی
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="info-item">
+
+        <div class="info-icon">
+            🛡️
+        </div>
+
+        <div>
+
+            <h3>
+                خرید مطمئن
+            </h3>
+
+            <p>
+                تجربه خرید ساده و راحت
+            </p>
+
+        </div>
+
+    </div>
+
+
+</div>
+
+
+
+<!-- =====================================================
+     ABOUT
+===================================================== -->
+
+<div
+    class="about"
+    id="about">
+
+    <h2>
+        درباره مرغداری افرازه
+    </h2>
+
+    <p>
+
+        مرغداری افرازه یک فروشگاه اینترنتی
+        برای عرضه انواع پرندگان،
+        تخم پرندگان و محصولات مرتبط
+        با پرورش طیور است.
+
+    </p>
+
+</div>
+
+
+</main>
+
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer id="contact">
+
+<div class="container">
+
+
+<div class="footer-grid">
+
+
+    <div>
+
+        <h3>
+            🐔 مرغداری افرازه
+        </h3>
+
+        <p>
+
+            فروش انواع پرندگان،
+            تخم پرندگان و محصولات مرتبط
+            با پرورش طیور.
+
+        </p>
+
+    </div>
+
+
+    <div>
+
+        <h3>
+            دسترسی سریع
+        </h3>
+
+        <a href="#">
+            خانه
+        </a>
+
+        <a href="#products">
+            فروشگاه
+        </a>
+
+        <a href="#about">
+            درباره ما
+        </a>
+
+    </div>
+
+
+    <div>
+
+        <h3>
+            محصولات
+        </h3>
+
+        <a href="#products">
+            مرغ
+        </a>
+
+        <a href="#products">
+            بلدرچین
+        </a>
+
+        <a href="#eggs">
+            تخم پرندگان
+        </a>
+
+    </div>
+
+
+    <div>
+
+        <h3>
+            تماس
+        </h3>
+
+        <p>
+            📞 0912-000-0000
+        </p>
+
+        <p>
+            ✉ info@example.com
+        </p>
+
+    </div>
+
+
+</div>
+
+
+<div class="copyright">
+
+    تمامی حقوق سایت محفوظ است
+    © 2016 - 2026
+
+</div>
+
+
+</div>
+
+</footer>
+
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script>
+
+
+/* =====================================================
+   حالت روز / شب
+===================================================== */
+
+function toggleTheme(){
+
+    document.body.classList.toggle("dark");
+
+    var dark =
+        document.body.classList.contains("dark");
+
+    localStorage.setItem(
+        "darkMode",
+        dark
+    );
+
+    document.getElementById(
+        "themeButton"
+    ).innerHTML =
+        dark ? "☀️" : "🌙";
+}
+
+
+/* ذخیره حالت شب */
+
+if(
+    localStorage.getItem("darkMode")
+    ===
+    "true"
+){
+
+    document.body.classList.add("dark");
+
+    document.getElementById(
+        "themeButton"
+    ).innerHTML="☀️";
+}
+
+
+/* =====================================================
+   سبد خرید
+===================================================== */
+
+var cartCount=0;
+
+
+function addToCart(event){
+
+    event.preventDefault();
+
+    cartCount++;
+
+    document.getElementById(
+        "cartCount"
+    ).innerText=cartCount;
+
+    alert(
+        "✅ محصول به سبد خرید اضافه شد."
+    );
+}
+
+
+/* =====================================================
+   جستجوی فروشگاه
+===================================================== */
+
+function searchProducts(){
+
+    var input =
+        document
+        .getElementById("searchInput")
+        .value
+        .toLowerCase();
+
+
+    var products =
+        document
+        .getElementsByClassName("product");
+
+
+    for(
+        var i=0;
+        i<products.length;
+        i++
+    ){
+
+        var name =
+            products[i]
+            .getElementsByTagName("h3")[0]
+            .innerText
+            .toLowerCase();
+
+
+        if(
+            name.indexOf(input)>-1
+        ){
+
+            products[i]
+            .style.display="";
+
+        }
+
+        else{
+
+            products[i]
+            .style.display="none";
+
+        }
+
+    }
+
+}
+
+
+/* =====================================================
+   رفتن به فروشگاه
+===================================================== */
+
+function goToProducts(){
+
+    document
+    .getElementById("products")
+    .scrollIntoView({
+        behavior:"smooth"
+    });
+
+}
+
+</script>
+
+
+</body>
+</html>
